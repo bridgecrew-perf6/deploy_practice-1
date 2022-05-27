@@ -1,0 +1,27 @@
+{% extends "posts/post_base.html" %}
+
+
+{% block prepost %}
+    <div class="col-md-4">
+        <div class="content">
+            {% if user.is_authenticated %}
+            <h2>
+                Welcome back
+                <a href="{% url 'posts:for_user' username=user.username %}">@{{ user.username }}</a>
+            </h2>
+            {% endif %}
+
+            <h2>Posts</h2>
+            <p>Welcome to the Posts Page!</p>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block post_content %}
+<div class="col-md-8">
+    {% for post in post_list %}
+        {% include "posts/_post.html" %}
+    {% endfor %}
+</div>
+{% endblock %}

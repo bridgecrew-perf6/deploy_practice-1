@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <h1>Welcome to Space Social!</h1>
+    <h3>This is a social networking site for space lovers 🚀</h3>
+    <br>
+    <a href="{% url 'posts:all' %}" class="btn btn-primary" role='button'>View All Posts</a>
+    <a href="{% url 'groups:all' %}" class="btn btn-primary" role='button'>View All Groups</a>
+
+{% endblock %}
